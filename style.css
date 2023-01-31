@@ -36,17 +36,20 @@ select::-ms-expand {
 	--white: #fff;
 	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
-	box-sizing: content-box;
+	box-sizing: border-box;
 	color: var(--text-color-brighter);
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
 body {
 	background-color: var(--bg-dark);
-	height: 100vh;
+	min-height: 100vh;
+	width: 100vw;
 }
 
 .header-nav {
-	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -58,6 +61,9 @@ body {
 	font-weight: normal;
 	border: 0px solid black;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	z-index: 999;
+	top: 0;
+	position: fixed;
 }
 
 .left {
@@ -137,15 +143,21 @@ svg:hover path {
 	cursor: pointer;
 	fill: var(--blue);
 }
+.home {
+	height: 100vh;
+	width: 100%;
+}
 
 .nav {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 20rem;
-	height: 100vh;
+	width: 200px;
+	top: 5rem;
+	left: 0;
+	height: 100%;
 	background-color: var(--btn-light);
-	position: relative;
+	position: fixed;
 }
 
 .genre li,
@@ -164,6 +176,7 @@ svg:hover path {
 .options {
 	border-top: 1px solid var(--gray-hover);
 	font-weight: normal;
+	padding-bottom: 5rem;
 }
 
 .home {
@@ -171,12 +184,6 @@ svg:hover path {
 	width: 100%;
 	flex-direction: row;
 	justify-content: stretch;
-}
-
-.home-header {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
 }
 
 .carousel {
@@ -190,6 +197,7 @@ svg:hover path {
 		url(/images/death-stranding-banner-cropped.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	margin-top: 5rem;
 }
 
 .home-nav-bar {
@@ -280,11 +288,16 @@ select:active {
 	align-items: baseline;
 	padding-left: 4rem;
 	padding-right: 4rem;
+	margin-bottom: 3rem;
 }
 
 .home-header {
 	font-weight: 700;
 	font-size: 1rem;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin-left: 200px;
 }
 
 .buttons button {
@@ -306,8 +319,8 @@ select:active {
 	padding-left: 4rem;
 	padding-right: 4rem;
 	width: 100%;
-	height: 100%;
 	gap: 4rem;
+	padding-bottom: 5rem;
 }
 
 .game-wrapper {
